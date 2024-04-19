@@ -1,6 +1,6 @@
 // import React from 'react'
 
-export const Total = () => {
+export const LoginForm = () => {
   return (
     <div>
       <p>Total price: {999}</p>

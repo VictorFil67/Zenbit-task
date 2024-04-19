@@ -1,17 +1,18 @@
 // import React from 'react'
-import { Cart } from "../../components/Cart/Cart";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { Vue } from "../../components/Vue/Vue";
 import s from "./LoginPage.module.css";
 
 export const LoginPage = () => {
   return (
-    <main className={s.mainShoppingCart}>
-      <div className={s.info}>
-        <section className={s.customer}>{/* <Customer /> */}</section>
-        <section className={s.cart}>
-          <Cart />
-        </section>
-      </div>
-      <section className={s.total}>{/* <Total/> */}</section>
+    <main className={s.mainLogin}>
+      <section className={s.vue}>
+        <Vue />
+      </section>
+      <div className={s.info}></div>
+      <section className={s.loginForm}>
+        <LoginForm />
+      </section>
     </main>
   );
 };
