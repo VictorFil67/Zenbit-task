@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <BrowserRouter basename="/medicine-delivery">
+  <BrowserRouter basename="/zenbit-task">
     {/* <PersistGate loading={null} persistor={persistor}>
       <Provider store={store}> */}
     <App />
