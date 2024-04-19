@@ -1,0 +1,10 @@
+.cartList {
+  width: 100%;
+}
+.cartItem {
+  display: flex;
+  flex-basis: 100%;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+}
