@@ -1,7 +1,7 @@
 // import React from "react";
 
 // import { useEffect, useState } from "react";
-// import { Medicines } from "../../components/Medicines/Medicines.jsx";
+import { Pictures } from "../../components/Pictures/Pictures.jsx";
 import { Hero } from "../../components/Hero/Hero.jsx";
 import s from "./MainPage.module.css";
 // import { pharmacies } from "../../components/Hero/pharmacies.js";
@@ -24,12 +24,16 @@ export const MainPage = () => {
 
   return (
     <main className={s.main}>
-      <section>
-        <Hero />
+      <section className={s.heroSection}>
+        <div className="container">
+          <Hero />
+        </div>
       </section>
-      {/* <section className={s.medicines}>
-        <Medicines medicines={medicines} />
-      </section> */}
+      <section className={s.pictures}>
+        <div className="container">
+          <Pictures />
+        </div>
+      </section>
     </main>
   );
 };

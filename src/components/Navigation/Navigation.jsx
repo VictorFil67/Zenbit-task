@@ -8,30 +8,32 @@ export const Navigation = () => {
   return (
     <div>
       <header className={s.header}>
-        {location.pathname === "/" ? (
-          <nav className={s.nav}>
-            <NavLink className={s.myLogo} to="/">
-              My Logo
-            </NavLink>
-            <div className={s.log}>
-              <NavLink className={s.loginlink} to="/login">
-                Log In
+        <div className="container">
+          {location.pathname === "/" ? (
+            <nav className={s.nav}>
+              <NavLink className={s.myLogo} to="/">
+                My Logo
               </NavLink>
-              {/* <p className={s.delimeter}>|</p> */}
-              <NavLink className={s.signUpLink} to="/login">
-                Sign Up
-              </NavLink>
-            </div>
-            {/* <NavLink className={s.link} to="/favorites">
+              <div className={s.log}>
+                <NavLink className={s.loginlink} to="/login">
+                  Log In
+                </NavLink>
+                {/* <p className={s.delimeter}>|</p> */}
+                <NavLink className={s.signUpLink} to="/login">
+                  Sign Up
+                </NavLink>
+              </div>
+              {/* <NavLink className={s.link} to="/favorites">
             Favorites
           </NavLink> */}
-          </nav>
-        ) : (
-          ""
-        )}
-        {/* {Route path="/"} */}
+            </nav>
+          ) : (
+            ""
+          )}
+          {/* {Route path="/"} */}
 
-        {/* <hr /> */}
+          {/* <hr /> */}
+        </div>
       </header>
       <Outlet />
     </div>

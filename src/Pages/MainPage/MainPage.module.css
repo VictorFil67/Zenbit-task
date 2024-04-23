@@ -1,4 +1,4 @@
-.shops {
+/* .shops {
   width: 20%;
   border: 2px solid grey;
   border-radius: 10px;
@@ -10,4 +10,10 @@
   border: 2px solid grey;
   border-radius: 10px;
   overflow-y: scroll;
+} */
+.heroSection {
+  background: url(../../images/Desktop5.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
