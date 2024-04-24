@@ -4,23 +4,13 @@
 import { Pictures } from "../../components/Pictures/Pictures.jsx";
 import { Hero } from "../../components/Hero/Hero.jsx";
 import s from "./MainPage.module.css";
-// import { pharmacies } from "../../components/Hero/pharmacies.js";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../store/auth/selectors.js";
+import { selectPictures } from "../../store/pictures/selectors.js";
 
 export const MainPage = () => {
-  // const [medicines, setMedicines] = useState([]);
-
-  // useEffect(() => {
-  //   getMedicines();
-  // }, []);
-
-  // console.log(medicines);
-
-  // function getMedicines(pharmacyId = 1) {
-  //   const pharmasyIndex = pharmacies.findIndex(
-  //     (pharmacy) => pharmacy.id === pharmacyId
-  //   );
-  //   setMedicines(pharmacies[pharmasyIndex].medicines);
-  // }
+  const user = useSelector(selectUser);
+  const pictures = useSelector(selectPictures);
 
   return (
     <main className={s.main}>
@@ -29,11 +19,13 @@ export const MainPage = () => {
           <Hero />
         </div>
       </section>
-      <section className={s.pictures}>
-        <div className="container">
-          <Pictures />
-        </div>
-      </section>
+      {user && pictures && (
+        <section className={s.pictures}>
+          <div className="container">
+            <Pictures />
+          </div>
+        </section>
+      )}
     </main>
   );
 };

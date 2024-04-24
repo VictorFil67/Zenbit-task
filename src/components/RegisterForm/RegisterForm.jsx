@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
-import s from "./LoginForm.module.css";
+import s from "./RegisterForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { signInThunk } from "../../store/auth/operations";
+import { signUpThunk } from "../../store/auth/operations";
 import { toast } from "react-toastify";
-import { fetchPicturesThunk } from "../../store/pictures/operations";
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,21 +22,11 @@ export const LoginForm = () => {
     //   password,
     // };
     // console.log(user);
-    dispatch(signInThunk({ email, password }))
+    dispatch(signUpThunk({ email, password }))
       .unwrap()
       .then(() => {
-        toast.success(`Welcome`);
-        navigate("/");
-      })
-      .catch((err) => {
-        toast.error(err);
-      });
-
-    dispatch(fetchPicturesThunk())
-      .unwrap()
-      .then(() => {
-        // toast.success(`Welcome`);
-        // navigate("/");
+        toast.info(`Please Login`);
+        navigate("/login");
       })
       .catch((err) => {
         toast.error(err);
@@ -45,7 +34,7 @@ export const LoginForm = () => {
   }
   return (
     <div className={s.loginWrap}>
-      <h1 className={s.formTitle}>Login</h1>
+      <h1 className={s.formTitle}>Register</h1>
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={s.inputBlock}>
           <div className={s.inputBlockWrap}>
@@ -86,16 +75,16 @@ export const LoginForm = () => {
               <span className={s.error}>{errors.password?.message}</span>
             </div>
           </div>
-          <Link className={s.signUpLink}>Forgot password?</Link>
+          {/* <Link className={s.signUpLink}>Forgot password?</Link> */}
         </div>
         <button name="submit" className={s.submit} type="submit">
-          Sign In
+          Sign Up
         </button>
       </form>
       <div className={s.signUp}>
-        <p className={s.signUpText}>Don’t have account? </p>
-        <Link className={s.signUpLink} to="/register">
-          Sign Up
+        <p className={s.signUpText}>Do you have account? </p>
+        <Link className={s.signUpLink} to="/login">
+          Sign In
         </Link>
       </div>
     </div>

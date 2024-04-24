@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { signInThunk, signUpThunk } from "./operations";
+import {
+  currentThunk,
+  logoutThunk,
+  signInThunk,
+  signUpThunk,
+} from "./operations";
 
 const authSlice = createSlice({
   name: "auth",
@@ -7,6 +12,7 @@ const authSlice = createSlice({
     user: null,
     isLoading: false,
     error: null,
+    token: "",
   },
   reducers: {
     // changeDayNorma: (state, { payload }) => {
@@ -37,6 +43,29 @@ const authSlice = createSlice({
       .addCase(signInThunk.rejected, (state, { payload }) => {
         state.error = payload;
         state.isLoading = false;
+      })
+      .addCase(currentThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(currentThunk.fulfilled, (state, { payload }) => {
+        state.user = payload;
+        state.isLoading = false;
+      })
+      .addCase(currentThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = true;
+      })
+      .addCase(logoutThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(logoutThunk.fulfilled, (state) => {
+        state.user = null;
+        state.token = "";
+        state.isLoading = false;
+      })
+      .addCase(logoutThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = true;
       });
   },
 });
