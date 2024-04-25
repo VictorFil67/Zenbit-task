@@ -86,7 +86,9 @@ export const LoginForm = () => {
               <span className={s.error}>{errors.password?.message}</span>
             </div>
           </div>
-          <Link className={s.signUpLink}>Forgot password?</Link>
+          <Link className={s.signUpLink} to="/forgot-password">
+            Forgot password?
+          </Link>
         </div>
         <button name="submit" className={s.submit} type="submit">
           Sign In

@@ -31,6 +31,8 @@ function App() {
           {/* <Route path="/catalog" element={<Catalog />} /> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<LoginPage />} />
+          <Route path="/forgot-password" element={<LoginPage />} />
+          <Route path="/update-password/:tempCode" element={<LoginPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

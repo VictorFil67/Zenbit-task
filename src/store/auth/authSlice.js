@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   currentThunk,
+  forgotThunk,
   logoutThunk,
   signInThunk,
   signUpThunk,
+  updatePasswordThunk,
 } from "./operations";
 
 const authSlice = createSlice({
@@ -66,6 +68,26 @@ const authSlice = createSlice({
       .addCase(logoutThunk.rejected, (state, { payload }) => {
         state.error = payload;
         state.isLoading = true;
+      })
+      .addCase(forgotThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(forgotThunk.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(forgotThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
+      })
+      .addCase(updatePasswordThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updatePasswordThunk.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(updatePasswordThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.isLoading = false;
       });
   },
 });
