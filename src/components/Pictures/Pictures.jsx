@@ -8,7 +8,7 @@ export const Pictures = () => {
   const pictures = useSelector(selectPictures);
   console.log(pictures);
   // [
-  //   "/zenbit-task/src/images/pictures/Component32.png",
+  //   "../../images/pictures/Component32.png",
   //   "/zenbit-task/src/images/pictures/Component36.png",
   //   "/zenbit-task/src/images/pictures/Component37.png",
   //   "/zenbit-task/src/images/pictures/Component38.png",
@@ -22,7 +22,7 @@ export const Pictures = () => {
             <img
               className={s.img}
               src={picture.src}
-              alt={picture}
+              alt={picture.alt}
               width={630}
               height={400}
             />
