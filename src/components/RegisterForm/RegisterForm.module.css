@@ -2,9 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 350px;
+  min-width: 280px;
+  max-width: 550px;
   align-items: flex-start;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 1440px) {
+  .loginWrap {
+    width: 350px;
+  }
 }
 .formTitle {
   font: 700 28px / 1.21429 "Merriweather", sans-serif;

@@ -1,5 +1,15 @@
 .pictures {
-  padding: 50px 70px 12px;
+  padding: 20px 0px 10px;
+}
+@media only screen and (min-width: 768px) {
+  .pictures {
+    padding: 50px 30px 12px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .pictures {
+    padding: 50px 70px 12px;
+  }
 }
 .picturesTitle {
   font: 700 28px / 1.21429 "Merriweather", sans-serif;
@@ -12,12 +22,18 @@
   flex-wrap: wrap;
   gap: 20px;
   /* padding: 20px 60px; */
-  justify-content: space-between;
+  justify-content: center;
   /* overflow:scroll; */
 }
 
 .pictureCard {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+@media only screen and (max-width: 767px) {
+  .pictureCard {
+    width: 280px;
+    height: 180px;
+  }
 }
 .img {
   max-width: 100%;

@@ -18,7 +18,7 @@ export const Pictures = () => {
       <h2 className={s.picturesTitle}>Open Deals</h2>
       <ul className={s.picturesList}>
         {pictures.map((picture) => (
-          <li className={s.picture} key={picture._id}>
+          <li className={s.pictureCard} key={picture._id}>
             <img
               className={s.img}
               src={picture.src}

@@ -18,9 +18,23 @@ body {
   background-color: #f0f6ff;
 }
 .container {
-  max-width: 1460px;
+  min-width: 320px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    min-width: 768px;
+    /* margin: 0 auto; */
+    padding: 0 32px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1460px;
+    /* margin: 0 auto; */
+    padding: 0 10px;
+  }
 }
 
 ul {

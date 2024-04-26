@@ -15,7 +15,7 @@ export const LoginPage = () => {
         <div className={s.vue}>
           <Vue />
         </div>
-        <div className={s.info}></div>
+        {/* <div className={s.info}></div> */}
         <div className={s.loginForm}>
           {location.pathname === "/login" ? (
             <LoginForm />

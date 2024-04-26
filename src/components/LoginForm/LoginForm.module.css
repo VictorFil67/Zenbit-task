@@ -2,9 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 350px;
+  min-width: 280px;
+  max-width: 550px;
   align-items: flex-start;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 1440px) {
+  .loginWrap {
+    width: 350px;
+  }
 }
 .formTitle {
   font: 700 28px / 1.21429 "Merriweather", sans-serif;
@@ -44,9 +51,6 @@
   padding: 14px 20px;
   border: 2px solid #e0e0e0;
   border-radius: 5px;
-  /* padding: 19px 39px; */
-  /* width: 350px;
-  height: 48px; */
   background: #e0e0e0;
   outline: none;
   &::placeholder {
@@ -64,13 +68,10 @@
 }
 .submit {
   border-radius: 5px;
-  /* width: 350px;
-  height: 44px; */
   background: #b29f7e;
   font: 700 16px / 1.375 "Merriweather", sans-serif;
   text-align: center;
   color: #fff;
-  /* outline: none; */
   &:hover {
     border: none;
     outline: none;
