@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const api = axios.create({ baseURL: "http://localhost:4000" });
+export const api = axios.create({
+  baseURL: "https://zenbit-task-back.onrender.com",
+});
 
 export function setToken(token) {
   api.defaults.headers.authorization = `Bearer ${token}`;
