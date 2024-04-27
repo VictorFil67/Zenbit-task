@@ -11,9 +11,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { currentThunk } from "./store/auth/operations";
 import { selectUser } from "./store/auth/selectors";
 import { fetchPicturesThunk } from "./store/pictures/operations";
+import { Loader } from "./components/Loader/Loader";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const isLoading = useSelector((state) => state.loader.loading);
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <>
+      {isLoading && <Loader />}
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<MainPage />} />

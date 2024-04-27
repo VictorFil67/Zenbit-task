@@ -1,0 +1,18 @@
+.loader {
+  background-image: url("../../images/angry-2498.gif");
+  position: fixed;
+  display: flex;
+  z-index: 9999;
+  background-repeat: no-repeat;
+  min-height: 360px;
+  min-width: 360px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin: auto; */
+  /* transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(10px); */
+}
