@@ -13,12 +13,10 @@ export const UpdatePassword = () => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
   const dispatch = useDispatch();
-  const tempCode = useParams("tempCode");
+  const tempCode = useParams();
   const navigate = useNavigate();
-  console.log(tempCode);
 
   function onSubmit({ newPassword }) {
-    console.log(tempCode);
     dispatch(updatePasswordThunk({ tempCode, newPassword }))
       .unwrap()
       .then(() => {

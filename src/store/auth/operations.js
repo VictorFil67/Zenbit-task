@@ -79,6 +79,7 @@ export const forgotThunk = createAsyncThunk(
 export const updatePasswordThunk = createAsyncThunk(
   "user/updatePassword",
   async ({ tempCode, newPassword }, thunkAPI) => {
+    console.log(tempCode);
     try {
       const { data } = await api.post(
         `users/update-password/${tempCode.tempCode}`,
