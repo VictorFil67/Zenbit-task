@@ -18,6 +18,7 @@ export const UpdatePassword = () => {
   console.log(tempCode);
 
   function onSubmit({ newPassword }) {
+    console.log(tempCode);
     dispatch(updatePasswordThunk({ tempCode, newPassword }))
       .unwrap()
       .then(() => {
