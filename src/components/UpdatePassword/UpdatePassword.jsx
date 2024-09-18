@@ -15,6 +15,7 @@ export const UpdatePassword = () => {
   const dispatch = useDispatch();
   const tempCode = useParams("tempCode");
   const navigate = useNavigate();
+  console.log(tempCode);
 
   function onSubmit({ newPassword }) {
     dispatch(updatePasswordThunk({ tempCode, newPassword }))

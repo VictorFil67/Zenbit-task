@@ -12,6 +12,7 @@ import { currentThunk } from "./store/auth/operations";
 import { selectUser } from "./store/auth/selectors";
 import { fetchPicturesThunk } from "./store/pictures/operations";
 import { Loader } from "./components/Loader/Loader";
+import PopupWindow from "./components/PopupWindow/PopupWindow";
 
 function App() {
   const isLoading = useSelector((state) => state.loader.loading);
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       {isLoading && <Loader />}
+      <PopupWindow />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<MainPage />} />

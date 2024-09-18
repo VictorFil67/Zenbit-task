@@ -6,6 +6,7 @@ import s from "./LoginPage.module.css";
 import { RegisterForm } from "../../components/RegisterForm/RegisterForm";
 import { ForgotPassword } from "../../components/ForgotPassword/ForgotPassword";
 import { UpdatePassword } from "../../components/UpdatePassword/UpdatePassword";
+// import PopupWindow from "../../components/PopupWindow/PopupWindow";
 
 export const LoginPage = () => {
   const location = useLocation();
